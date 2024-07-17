@@ -1,0 +1,38 @@
+<!-- src/app/components/task-list/task-list.component.html -->
+<div class="container">
+    <div class="row mb-3">
+      <div class="col">
+        <button class="btn btn-success" (click)="exportTasks()">Export to CSV</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of tasks$ | async">
+              <td>{{ task.title }}</td>
+              <td>{{ task.description }}</td>
+              <td>{{ task.dueDate | date }}</td>
+              <td>{{ task.priority }}</td>
+              <td>{{ task.status }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="editTask(task)">Edit</button>
+                <button class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

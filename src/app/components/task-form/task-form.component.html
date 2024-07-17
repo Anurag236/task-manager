@@ -1,0 +1,27 @@
+<!-- src/app/components/task-form/task-form.component.html -->
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="taskForm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <input type="date" id="dueDate" class="form-control" formControlName="dueDate">
+      </div>
+      <div class="mb-3">
+        <label for="priority" class="form-label">Priority</label>
+        <select id="priority" class="form-control" formControlName="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,10 @@
+<!-- src/app/components/task-history/task-history.component.html -->
+<div class="container">
+    <div *ngIf="task">
+      <h2>History for {{ task.title }}</h2>
+      <ul>
+        <li *ngFor="let entry of task.history">{{ entry }}</li>
+      </ul>
+    </div>
+  </div>
+  
